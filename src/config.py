@@ -7,10 +7,10 @@ class Settings(BaseSettings):
     ENVIRONMENT: str = "development"
     
     # Paths
-    BASE_DIR: Path = Path(__file__).parent.parent
-    DATA_PATH: Path = BASE_DIR / "data" / "raw"
-    PROCESSED_DATA_PATH: Path = BASE_DIR / "data" / "processed"
-    MODELS_PATH: Path = BASE_DIR / "models"
+    BASE_DIR: Path = Path(__file__).parent.parent.resolve()
+    DATA_PATH: Path = (BASE_DIR / "data" / "raw").resolve()
+    PROCESSED_DATA_PATH: Path = (BASE_DIR / "data" / "processed").resolve()
+    MODELS_PATH: Path = (BASE_DIR / "models").resolve()
     
     # MLflow
     MLFLOW_TRACKING_URI: str = "http://localhost:5000"
