@@ -1,41 +1,60 @@
 [project]
 name = "churn-prediction"
 version = "0.1.0"
-description = "Add your description here"
-readme = "README.md"
-requires-python = ">=3.13"
+description = "End-to-end ML pipeline for churn prediction"
+requires-python = ">=3.10"
+
 dependencies = [
-    "boto3>=1.42.4",
-    "catboost>=1.2.8",
-    "evidently>=0.7.17",
-    "fastapi>=0.124.0",
-    "lightgbm>=4.6.0",
-    "loguru>=0.7.3",
-    "mlflow>=3.7.0",
-    "numpy>=2.3.5",
-    "optuna>=4.6.0",
-    "pandas>=2.3.3",
-    "polars>=1.35.2",
-    "pydantic>=2.12.5",
-    "pydantic-settings>=2.12.0",
-    "python-dotenv>=1.2.1",
-    "pyyaml>=6.0.3",
-    "s3fs>=0.4.2",
-    "scikit-learn>=1.7.2",
-    "shap>=0.49.1",
-    "uvicorn[standard]>=0.38.0",
+    "pandas>=2.1.0",
+    "polars>=0.19.0",
+    "numpy>=1.24.0",
+    "scikit-learn>=1.3.0",
+    "imbalanced-learn>=0.11.0",
+    "lightgbm>=4.1.0",
+    "catboost>=1.2.0",
+    "mlflow>=2.8.0",
+    "fastapi>=0.104.0",
+    "uvicorn[standard]>=0.24.0",
+    "pydantic>=2.4.0",
+    "pydantic-settings>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "pyyaml>=6.0",
+    "loguru>=0.7.0",
 ]
 
-[dependency-groups]
+[project.optional-dependencies]
 dev = [
-    "black>=25.11.0",
-    "ipykernel>=7.1.0",
-    "jupyter>=1.1.1",
-    "mypy>=1.19.0",
-    "notebook>=7.5.0",
-    "pre-commit>=4.5.0",
-    "pytest>=9.0.1",
-    "pytest-asyncio>=1.3.0",
-    "pytest-cov>=7.0.0",
-    "ruff>=0.14.8",
+    "jupyter>=1.0.0",
+    "ipykernel>=6.25.0",
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "black>=23.10.0",
+    "ruff>=0.1.0",
 ]
+
+tuning = [
+    "optuna>=3.4.0",
+    "shap>=0.43.0",
+]
+
+viz = [
+    "matplotlib>=3.7.0",
+    "seaborn>=0.12.0",
+    "plotly>=5.17.0",
+]
+
+aws = [
+    "boto3>=1.28.0",
+    "s3fs>=2023.10.0",
+]
+
+all = [
+    "churn-prediction[dev,tuning,viz,aws]",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
