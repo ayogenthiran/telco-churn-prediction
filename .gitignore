@@ -49,6 +49,7 @@ build/
 .vscode/
 .idea/
 .cursor/
+.cursor/rules/
 
 # Testing
 .pytest_cache/
