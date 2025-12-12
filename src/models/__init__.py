@@ -1,1 +1,1 @@
-"""Models package for churn prediction."""
+"""Model training, tuning, and evaluation modules."""

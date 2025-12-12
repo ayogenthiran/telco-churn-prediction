@@ -21,6 +21,17 @@ models/*.joblib
 
 # MLflow
 mlruns/
+mlruns_test/
+
+# Artifacts (generated files)
+artifacts/
+*.pkl
+*.joblib
+
+# Build artifacts
+*.egg-info/
+dist/
+build/
 
 # Jupyter
 .ipynb_checkpoints/
@@ -37,6 +48,12 @@ mlruns/
 # IDE
 .vscode/
 .idea/
+.cursor/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
 
 # Codacy
 .codacy/
