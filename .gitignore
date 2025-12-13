@@ -8,16 +8,16 @@ venv/
 env/
 
 # Data
+data/
 data/raw/*
 data/processed/*
 data/features/*
-!data/raw/.gitkeep
-!data/processed/.gitkeep
-!data/features/.gitkeep
 
 # Models
+models/
 models/*.pkl
 models/*.joblib
+src/serving/model/
 
 # MLflow
 mlruns/
@@ -52,6 +52,7 @@ build/
 .cursor/rules/
 
 # Testing
+tests/
 .pytest_cache/
 .coverage
 htmlcov/
