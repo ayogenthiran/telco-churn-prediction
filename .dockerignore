@@ -1,0 +1,79 @@
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+
+# Virtual environments (not needed in container)
+.venv/
+venv/
+env/
+ENV/
+
+# Data files (not needed for serving)
+data/
+data/raw/
+data/processed/
+data/features/
+
+# MLflow runs (models are copied separately via src/serving/model)
+mlruns/
+mlruns_test/
+
+# Artifacts (not needed, models are in src/serving/model)
+artifacts/
+*.pkl
+*.joblib
+
+# Development and testing files
+notebooks/
+tests/
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+# Git files
+.git/
+.gitignore
+.gitattributes
+
+# Environment and config files
+.env
+.env.local
+.env.*.local
+*.env
+
+# IDE and editor files
+.vscode/
+.idea/
+.cursor/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Documentation (optional - include if you want docs in container)
+# README.md
+# docs/
+
+# CI/CD files (not needed in container)
+.github/
+.codacy/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Scripts (not needed for serving - only used for training/development)
+scripts/
+
+# Lock files (uv.lock not needed if using pip)
+uv.lock
